@@ -8,8 +8,20 @@ Configuration
 
 Configuration files are located in `/opt/collectd-plugins/cloudwatch/config`. Documentation on configuring the plugin can be found at the [collectd-cloudwatch Github][2] project.
 
-Development
------------
+Build
+-----
+
+### Dependencies
+
+* make
+* rpm-build
+
+### Building
+
+    $ make rpmbuild
+    
+Docker
+------
 
 ### Dependencies
 
