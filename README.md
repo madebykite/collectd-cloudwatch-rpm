@@ -13,8 +13,8 @@ Build
 
 ### Dependencies
 
-* make
-* rpm-build
+* `make`
+* `rpm-build`
 
 ### Building
 
