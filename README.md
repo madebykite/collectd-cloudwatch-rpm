@@ -6,7 +6,7 @@ Packages the [collectd-cloudwatch][1] CollectD plugin as an RPM.
 Configuration
 -------------
 
-Configuration files are located in `/opt/collectd-plugins/cloudwatch/config`. Documentation on configuring the plugin can be found on the [collectd-cloudwatch Github project][2].
+Configuration files are located in `/opt/collectd-plugins/cloudwatch/config`. Documentation on configuring the plugin can be found at the [collectd-cloudwatch Github][2] project.
 
 Development
 -----------
