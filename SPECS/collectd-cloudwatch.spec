@@ -29,6 +29,9 @@ cp -r %{_builddir}/%{name}-%{commit}/src %{buildroot}/opt/collectd-plugins
 cp %{SOURCE1} %{buildroot}/opt/collectd-plugins/cloudwatch/config/blocked_metrics.example
 cp %{SOURCE2} %{buildroot}/opt/collectd-plugins/cloudwatch/config/plugin.example.conf
 cp %{_builddir}/%{name}-%{commit}/resources/whitelist.conf  %{buildroot}/opt/collectd-plugins/cloudwatch/config/whitelist.example.conf
+rm %{buildroot}/opt/collectd-plugins/cloudwatch/config/blocked_metrics
+rm %{buildroot}/opt/collectd-plugins/cloudwatch/config/plugin.conf
+rm %{buildroot}/opt/collectd-plugins/cloudwatch/config/whitelist.conf
 
 %clean
 
