@@ -7,9 +7,9 @@ Group: Development/Tools
 License: MIT. Copyright 2019 Kite Development & Consulting Ltd. All Rights Reserved.
 Summary: Provides awslabs' collectd-cloudwatch collectd plugin
 Source0: https://github.com/awslabs/collectd-cloudwatch/archive/%{commit}/%{name}-%{commit}.tar.gz
-Source1: blocked_metrics
-Source2: plugin.conf
-Requires: collectd, python-requests
+Source1: blocked_metrics.example
+Source2: plugin.example.conf
+Requires: collectd, python-pip, python-setuptools, python-requests
 BuildArch: noarch
 
 %description
@@ -26,13 +26,16 @@ cp %{_builddir}/%{name}-%{commit}/resources/collectd-cloudwatch.conf %{buildroot
 
 mkdir -p %{buildroot}/opt
 cp -r %{_builddir}/%{name}-%{commit}/src %{buildroot}/opt/collectd-plugins
-cp %{SOURCE1} %{buildroot}/opt/collectd-plugins/cloudwatch/config/blocked_metrics
-cp %{SOURCE2} %{buildroot}/opt/collectd-plugins/cloudwatch/config/plugin.conf
-cp %{_builddir}/%{name}-%{commit}/resources/whitelist.conf  %{buildroot}/opt/collectd-plugins/cloudwatch/config/whitelist.conf
+cp %{SOURCE1} %{buildroot}/opt/collectd-plugins/cloudwatch/config/blocked_metrics.example
+cp %{SOURCE2} %{buildroot}/opt/collectd-plugins/cloudwatch/config/plugin.example.conf
+cp %{_builddir}/%{name}-%{commit}/resources/whitelist.conf  %{buildroot}/opt/collectd-plugins/cloudwatch/config/whitelist.example.conf
 
 %clean
 
 %post
+cp /opt/collectd-plugins/cloudwatch/config/blocked_metrics.example /opt/collectd-plugins/cloudwatch/config/blocked_metrics
+cp /opt/collectd-plugins/cloudwatch/config/plugin.example.conf /opt/collectd-plugins/cloudwatch/config/plugin.conf
+cp /opt/collectd-plugins/cloudwatch/config/whitelist.example.conf /opt/collectd-plugins/cloudwatch/config/whitelist.conf
 
 %files
 %defattr(644, root, root, 755)
