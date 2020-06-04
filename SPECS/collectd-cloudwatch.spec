@@ -14,19 +14,19 @@ BuildArch: noarch
 %{summary}
 
 %prep
-%setup -q -n %{version}
+%setup -q -n %{name}-%{version}
 
 %build
 
 %install
 mkdir -p %{buildroot}/etc/collectd.d
-cp %{_builddir}/%{version}/resources/collectd-cloudwatch.conf %{buildroot}/etc/collectd.d/collectd-cloudwatch.conf
+cp %{_builddir}/%{name}-%{version}/resources/collectd-cloudwatch.conf %{buildroot}/etc/collectd.d/collectd-cloudwatch.conf
 
 mkdir -p %{buildroot}/opt
-cp -r %{_builddir}/%{version}/src %{buildroot}/opt/collectd-plugins
+cp -r %{_builddir}/%{name}-%{version}/src %{buildroot}/opt/collectd-plugins
 cp %{SOURCE1} %{buildroot}/opt/collectd-plugins/cloudwatch/config/blocked_metrics.example
 cp %{SOURCE2} %{buildroot}/opt/collectd-plugins/cloudwatch/config/plugin.example.conf
-cp %{_builddir}/%{version}/resources/whitelist.conf  %{buildroot}/opt/collectd-plugins/cloudwatch/config/whitelist.example.conf
+cp %{_builddir}/%{name}-%{version}/resources/whitelist.conf  %{buildroot}/opt/collectd-plugins/cloudwatch/config/whitelist.example.conf
 rm %{buildroot}/opt/collectd-plugins/cloudwatch/config/blocked_metrics
 rm %{buildroot}/opt/collectd-plugins/cloudwatch/config/plugin.conf
 rm %{buildroot}/opt/collectd-plugins/cloudwatch/config/whitelist.conf
