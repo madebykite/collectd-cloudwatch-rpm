@@ -1,12 +1,10 @@
-%global commit c3e498a0d42fb2c9ee5ddc449c5638a3659e7738
-
 Name: collectd-cloudwatch
-Version: 1.0.0
+Version: 1.0.1
 Release: %{Release}
 Group: Development/Tools
 License: MIT. Copyright 2019 Kite Development & Consulting Ltd. All Rights Reserved.
 Summary: Provides awslabs' collectd-cloudwatch collectd plugin
-Source0: https://github.com/awslabs/collectd-cloudwatch/archive/%{commit}/%{name}-%{commit}.tar.gz
+Source0: https://github.com/madebykite/collectd-cloudwatch/archive/1.0.1.tar.gz
 Source1: blocked_metrics.example
 Source2: plugin.example.conf
 Requires: collectd, python-pip, python-setuptools, python-requests
